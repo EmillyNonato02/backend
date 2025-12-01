@@ -24,6 +24,33 @@ app.get("/", (request, response) =>{
     })
 })
 
+app.post("/login", (request, response) => {
+    const { email, password } = request.body
+
+    const selectCommand = `SELECT * FROM emillynayara_02mb WHERE email = ?`
+
+    database.query(selectCommand, [email], (error, users) => {
+        if(error){
+            console.log(error)
+            return
+        }
+
+        //se o usuário não existir ou a senha estiver incorreta
+        if(users.length === 0||users[0].password !== password){
+            response.json({ message: "Usuário ou senha incorretos!" })
+            return
+        }
+
+        response.json({ id: users[0].id, name: user[0].name})  
+    })
+})
+
+app.post(pontuação , (request, response) => {
+    //pegar o id e a pontuação de dentro de request
+    // selecione o usuário pelo id
+    //alterar a pontuação do banco de dados usando a pontuação que foi recebida do front-end
+})
+
 app.post("/cadastrar", (request, response) => {
     //desestruturação
     const { user } = request.body
