@@ -45,11 +45,11 @@ app.post("/login", (request, response) => {
     })
 })
 
-app.post(pontuação , (request, response) => {
+//app.post(pontuação , (request, response) => {
     //pegar o id e a pontuação de dentro de request
     // selecione o usuário pelo id
     //alterar a pontuação do banco de dados usando a pontuação que foi recebida do front-end
-})
+//})
 
 app.post("/cadastrar", (request, response) => {
     //desestruturação
