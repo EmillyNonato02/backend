@@ -41,7 +41,7 @@ app.post("/login", (request, response) => {
             return
         }
 
-        response.json({ id: users[0].id, name: user[0].name})  
+        response.json({ id: user[0].id, name: user[0].name})  
     })
 })
 
